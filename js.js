@@ -1,6 +1,6 @@
 let map;
 let marker;
-let polyline;  // variable globale pour la ligne
+let polyline;  
 let setIntervalId = null;
 const latlngs = [];
 
@@ -46,6 +46,11 @@ function issTracker() {
 
         latitude.innerHTML = issLat.toFixed(6);
         longitude.innerHTML = issLong.toFixed(6);
+        
+        // fetchCityFromCoords( { lat: issLat, lng: issLong }).then(data => {
+        //     const city = data.address.country || "Localisation inconnue";
+        //     marker.bindPopup(`Coordonnees ISS : <br> Latitude: ${issLat.toFixed(6)}, Longitude: ${issLong.toFixed(6)}<br> Ville: ${city}`).openPopup();
+        // })
     }).catch(err => {
         console.error("Erreur lors de la récupération des données ISS :", err);
     });
