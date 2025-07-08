@@ -1,7 +1,11 @@
 function getDataFromApi() {
-    return fetch('http://api.open-notify.org/iss-now.json')
+    return fetch('http://api.open-notify.org/iss-now.json') // Appel à l'api et réception d'un Json
         .then(response => response.json());
 }
+
+
+
+// Projet non aboutie pour localisation de l'ISS par rapportt à une ville/pays
 
 // async function fetchCityFromCoords(coords) {
 //     try {

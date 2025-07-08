@@ -5,29 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- titre de la paeg -->
+    <title>ISS Tracker</title>
+    <link rel="icon" type="image/x-icon" href="media/iconISS.png">
 
+
+    <!-- import de leaflet (pour la map) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
+    <!-- La font pour le style -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+    <!-- PAGE CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- import de leaflet (js) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-    <title>Localisation de l'ISS</title>
+    <script src="js/horloge.js"></script>
 </head>
 
-<body>
+<body onload="startClock()" onunload="stopClock()">
+    <h1 class="title">🛰️ ISS TRACKER</h1>
+    <div><input type="text" name="Horloge" id="Horloge"></div>
 
-    <h1 class="title"> ISS TRACKER </h1>
+    <!-- emplacement de la map -->
     <div id="map" class="map"></div>
 
-    <button class="button"> Afficher l'ISS</button>
-    <h3>Latitude: <span id="latitude">Appuyer sur le bouton Afficher l'ISS</span></h3><h3>Longitude: <span id="longitude">Appuyer sur le bouton Afficher l'ISS</span></h3>
+    <!-- buton pour le suivi -->
+    <button class="button">Suivre l'ISS</button>
 
-    <script src="api/iss.js"></script>
-    <script src="js.js"></script>
+    <!-- affichage des coordonnées -->
+    <div class="coordinates">
+        <h3>Latitude : <span id="latitude">Appuyez sur le bouton</span></h3>
+        <h3>Longitude : <span id="longitude">Appuyez sur le bouton</span></h3>
+    </div>
 
+    <!-- import des scripts js -->
+    <!-- API -->
+    <script src="js/api/iss.js"></script>
+    <!-- traiteemnt API + MAP -->
+    <script src="js/js.js"></script>
 </body>
 
 </html>
