@@ -31,7 +31,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     width: 220px;
     outline: none;
-    pointer-events: none; /* évite que l'utilisateur tape dedans */
+    /* pointer-events: none;  */
 }
 
 
@@ -41,7 +41,7 @@ body {
     height: 500px;
     margin: 20px 0;
     border-radius: 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
     border: 2px solid rgba(0, 255, 255, 0.4);
 }
@@ -65,8 +65,15 @@ body {
     transform: scale(1.05);
 }
 
+.detail{
+    display: inline-flex;
+    justify-content: space-between;
+    gap : 20px;
+    
+}
+
 .coordinates {
-    text-align: center;
+    text-align: start;
     margin-bottom: 30px;
 }
 
